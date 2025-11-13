@@ -392,4 +392,113 @@
         <article class="card">
           <h2>XP Level → Total XP</h2>
           <p>
+            Java Edition XP formula, same math as the Minecraft Wiki. Enter a
+            level and see how much total XP you need from 0 to reach it.
+          </p>
+          <div class="xp-input-row">
+            <label for="xpLevel">Level:</label>
+            <input id="xpLevel" type="number" min="0" max="24791" value="30" />
+            <button type="button" onclick="handleXPClick()">Calculate</button>
+          </div>
+          <div id="xpResult" class="xp-result">
+            Level <span>30</span> requires <span>1395</span> total XP.
+          </div>
+          <p class="small">
+            Uses the piecewise formulas for 0–16, 17–31, and 32+ levels.
+          </p>
+        </article>
 
+        <article class="card">
+          <h2>More tools coming soon</h2>
+          <p>
+            Planned calculators: beacon range, furnace/smelting time, crop
+            growth odds, and redstone tick timing helpers.
+          </p>
+          <p class="small">
+            This is just a placeholder until the next utilities are added.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="packs">
+      <h2 class="section-title">Resource Packs</h2>
+      <div class="grid">
+        <article class="card">
+          <h2>Base Pack (placeholder)</h2>
+          <p>
+            This will host downloadable packs and eventually a checkbox-based
+            configurator similar to VanillaTweaks, powered by JSZip.
+          </p>
+          <p class="small">
+            Once the first pack is ready, a real download button will appear here.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="datapacks">
+      <h2 class="section-title">Datapacks</h2>
+      <div class="grid">
+        <article class="card">
+          <h2>Experimental datapacks</h2>
+          <p>
+            Future home for small QoL datapacks: crafting tweaks, mechanics
+            experiments, and other near-vanilla changes.
+          </p>
+          <p class="small">
+            I’ll link GitHub releases or zips here once things are ready to test.
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Built by <strong>HackinJMR</strong>. Hosted on GitHub Pages. All Minecraft
+      content belongs to Mojang &amp; Microsoft; this is a fan-made utility site.
+    </p>
+  </footer>
+
+  <script>
+    function levelToTotalXP(level) {
+      const L = Number(level);
+      if (isNaN(L) || L < 0) return 0;
+
+      if (L <= 16) {
+        return L * L + 6 * L;
+      } else if (L <= 31) {
+        return Math.floor(2.5 * L * L - 40.5 * L + 360);
+      } else {
+        return Math.floor(4.5 * L * L - 162.5 * L + 2220);
+      }
+    }
+
+    function handleXPClick() {
+      const input = document.getElementById("xpLevel");
+      let level = Number(input.value);
+
+      if (isNaN(level) || level < 0) level = 0;
+      if (level > 24791) level = 24791;
+      input.value = level;
+
+      const totalXP = levelToTotalXP(level);
+      const xpResult = document.getElementById("xpResult");
+      xpResult.innerHTML =
+        'Level <span>' +
+        level +
+        "</span> requires <span>" +
+        totalXP +
+        "</span> total XP.";
+    }
+
+    // Initialize default display
+    handleXPClick();
+  </script>
+</body>
+</html>
