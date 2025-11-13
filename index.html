@@ -155,4 +155,634 @@
     .hero-note {
       font-size: 0.8rem;
       color: var(--muted);
-      border-left: 2px s
+      border-left: 2px solid #343c52;
+      padding-left: 0.6rem;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, #1a2437 0, #0a0c13 55%);
+      border-radius: 14px;
+      border: 1px solid #252b3a;
+      padding: 1.1rem 1.1rem 1.3rem;
+      box-shadow:
+        0 0 35px #000000cc,
+        0 0 0 1px #05060a;
+    }
+
+    .hero-card-title {
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
+
+    .status-pill {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: #122318;
+      color: var(--accent);
+      border: 1px solid #295b35;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .hero-card-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .chip {
+      font-size: 0.72rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: #111522;
+      border: 1px solid #272f40;
+      color: var(--muted);
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 0.7rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.1rem 1.2rem;
+      box-shadow: 0 0 20px #000000aa;
+    }
+
+    .card h2 {
+      margin: 0 0 0.4rem;
+      font-size: 1rem;
+      color: var(--accent);
+    }
+
+    .card p {
+      margin: 0 0 0.8rem;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .small {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #202538;
+      margin: 1.5rem 0 1rem;
+    }
+
+    /* XP Calculator styles */
+    .xp-input-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      margin-bottom: 0.6rem;
+    }
+
+    label {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    input[type="number"] {
+      background: #0c0f18;
+      border-radius: 7px;
+      border: 1px solid #30364a;
+      padding: 0.35rem 0.5rem;
+      color: var(--text);
+      font-size: 0.86rem;
+      width: 110px;
+    }
+
+    input[type="number"]:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent-soft);
+    }
+
+    button {
+      border-radius: 7px;
+      border: none;
+      padding: 0.35rem 0.7rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      background: linear-gradient(135deg, #1e8e3e, #35d06a);
+      color: #05060a;
+      font-weight: 600;
+      box-shadow: 0 0 12px #35d06a66;
+      transition: 0.12s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow:
+        0 2px 12px #000000cc,
+        0 0 18px #35d06a88;
+    }
+
+    .xp-result {
+      font-size: 0.9rem;
+      margin-top: 0.3rem;
+    }
+
+    .xp-result span {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    footer {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1rem 1.5rem;
+      font-size: 0.72rem;
+      color: var(--muted);
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo">
+        <div class="logo-block"></div>
+        <span>Minecraft Utils</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#calculators">Calculators</a>
+        <a href="#packs">Resource Packs</a>
+        <a href="#datapacks">Datapacks</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h1 class="hero-title">
+          Minecraft utilities & packs by <span>HackinJMR</span>
+        </h1>
+        <p class="hero-sub">
+          A growing toolkit of web-based utilities and customizable packs for
+          Java Edition — calculators, tweaks, and quality-of-life stuff you can
+          actually use in real worlds.
+        </p>
+        <div class="hero-tags">
+          <div class="tag-pill"><span>WIP</span> – early prototype</div>
+          <div class="tag-pill">Java Edition</div>
+          <div class="tag-pill">No mods required</div>
+        </div>
+        <p class="hero-note">
+          You’re looking at version 1.0 of the site. I’ll be adding more
+          calculators, a pack configurator, and datapack tools over time.
+        </p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-title">
+          <span>What this site will do</span>
+          <span class="status-pill">In development</span>
+        </div>
+        <p class="hero-card-desc">
+          The goal is to be a “VanillaTweaks + calculators” mashup: small tools
+          that solve annoying Minecraft math and make it easy to build the
+          exact pack you want.
+        </p>
+        <div class="chip-row">
+          <div class="chip">XP & enchant math</div>
+          <div class="chip">Beacon & range tools</div>
+          <div class="chip">Loot / drop chances</div>
+          <div class="chip">Custom resource packs</div>
+          <div class="chip">Datapack helpers</div>
+        </div>
+        <p class="small">
+          For now, try the XP Level → Total XP calculator below and watch this
+          page slowly turn into a full toolset.
+        </p>
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="calculators">
+      <h2 class="section-title">Calculators</h2>
+      <div class="grid">
+        <article class="card">
+          <h2>XP Level → Total XP</h2>
+          <p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Minecraft Utils by HackinJMR</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --accent: #2dd16f;
+      --accent-soft: #2dd16f55;
+      --bg: #05060a;
+      --bg2: #10131c;
+      --card: #141824;
+      --border: #262c3b;
+      --text: #e5e5e5;
+      --muted: #9ba0b8;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #141b26 0, #05060a 60%);
+      color: var(--text);
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      background: linear-gradient(
+        to bottom,
+        #05060af0 0,
+        #05060acc 60%,
+        #05060a00 100%
+      );
+      border-bottom: 1px solid #151924;
+    }
+
+    .nav {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0.7rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      font-size: 0.92rem;
+      color: var(--accent);
+      text-shadow: 0 0 10px var(--accent-soft);
+    }
+
+    .logo-block {
+      width: 26px;
+      height: 26px;
+      border-radius: 6px;
+      background: linear-gradient(135deg, #1e8e3e, #35d06a);
+      box-shadow:
+        0 0 10px #35d06a99,
+        0 0 25px #0c3f20cc;
+      transform: translateY(1px);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 0.9rem;
+      font-size: 0.85rem;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      padding: 0.25rem 0.5rem;
+      border-radius: 999px;
+      transition: 0.15s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent);
+      background: #151924;
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 1.5rem auto 3rem;
+      padding: 0 1rem 3rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 750px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .hero-title {
+      font-size: clamp(1.9rem, 2.6vw, 2.4rem);
+      margin: 0 0 0.3rem;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+      text-shadow: 0 0 12px var(--accent-soft);
+    }
+
+    .hero-sub {
+      margin: 0 0 0.9rem;
+      color: var(--muted);
+      font-size: 0.94rem;
+      max-width: 34rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      font-size: 0.76rem;
+      margin-bottom: 1rem;
+    }
+
+    .tag-pill {
+      border-radius: 999px;
+      padding: 0.24rem 0.7rem;
+      border: 1px solid #252b3a;
+      background: #0b0f19;
+      color: var(--muted);
+    }
+
+    .tag-pill span {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-left: 2px solid #343c52;
+      padding-left: 0.6rem;
+    }
+
+    .hero-card {
+      background: radial-gradient(circle at top left, #1a2437 0, #0a0c13 55%);
+      border-radius: 14px;
+      border: 1px solid #252b3a;
+      padding: 1.1rem 1.1rem 1.3rem;
+      box-shadow:
+        0 0 35px #000000cc,
+        0 0 0 1px #05060a;
+    }
+
+    .hero-card-title {
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
+
+    .status-pill {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: #122318;
+      color: var(--accent);
+      border: 1px solid #295b35;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .hero-card-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 0.7rem;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .chip {
+      font-size: 0.72rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: #111522;
+      border: 1px solid #272f40;
+      color: var(--muted);
+    }
+
+    .section-title {
+      font-size: 1.1rem;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 0.7rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.1rem 1.2rem;
+      box-shadow: 0 0 20px #000000aa;
+    }
+
+    .card h2 {
+      margin: 0 0 0.4rem;
+      font-size: 1rem;
+      color: var(--accent);
+    }
+
+    .card p {
+      margin: 0 0 0.8rem;
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    .small {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #202538;
+      margin: 1.5rem 0 1rem;
+    }
+
+    /* XP Calculator styles */
+    .xp-input-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      margin-bottom: 0.6rem;
+    }
+
+    label {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    input[type="number"] {
+      background: #0c0f18;
+      border-radius: 7px;
+      border: 1px solid #30364a;
+      padding: 0.35rem 0.5rem;
+      color: var(--text);
+      font-size: 0.86rem;
+      width: 110px;
+    }
+
+    input[type="number"]:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 1px var(--accent-soft);
+    }
+
+    button {
+      border-radius: 7px;
+      border: none;
+      padding: 0.35rem 0.7rem;
+      font-size: 0.8rem;
+      cursor: pointer;
+      background: linear-gradient(135deg, #1e8e3e, #35d06a);
+      color: #05060a;
+      font-weight: 600;
+      box-shadow: 0 0 12px #35d06a66;
+      transition: 0.12s ease;
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow:
+        0 2px 12px #000000cc,
+        0 0 18px #35d06a88;
+    }
+
+    .xp-result {
+      font-size: 0.9rem;
+      margin-top: 0.3rem;
+    }
+
+    .xp-result span {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    footer {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1rem 1.5rem;
+      font-size: 0.72rem;
+      color: var(--muted);
+      opacity: 0.8;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo">
+        <div class="logo-block"></div>
+        <span>Minecraft Utils</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#calculators">Calculators</a>
+        <a href="#packs">Resource Packs</a>
+        <a href="#datapacks">Datapacks</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <h1 class="hero-title">
+          Minecraft utilities & packs by <span>HackinJMR</span>
+        </h1>
+        <p class="hero-sub">
+          A growing toolkit of web-based utilities and customizable packs for
+          Java Edition — calculators, tweaks, and quality-of-life stuff you can
+          actually use in real worlds.
+        </p>
+        <div class="hero-tags">
+          <div class="tag-pill"><span>WIP</span> – early prototype</div>
+          <div class="tag-pill">Java Edition</div>
+          <div class="tag-pill">No mods required</div>
+        </div>
+        <p class="hero-note">
+          You’re looking at version 1.0 of the site. I’ll be adding more
+          calculators, a pack configurator, and datapack tools over time.
+        </p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-title">
+          <span>What this site will do</span>
+          <span class="status-pill">In development</span>
+        </div>
+        <p class="hero-card-desc">
+          The goal is to be a “VanillaTweaks + calculators” mashup: small tools
+          that solve annoying Minecraft math and make it easy to build the
+          exact pack you want.
+        </p>
+        <div class="chip-row">
+          <div class="chip">XP & enchant math</div>
+          <div class="chip">Beacon & range tools</div>
+          <div class="chip">Loot / drop chances</div>
+          <div class="chip">Custom resource packs</div>
+          <div class="chip">Datapack helpers</div>
+        </div>
+        <p class="small">
+          For now, try the XP Level → Total XP calculator below and watch this
+          page slowly turn into a full toolset.
+        </p>
+      </div>
+    </section>
+
+    <hr />
+
+    <section id="calculators">
+      <h2 class="section-title">Calculators</h2>
+      <div class="grid">
+        <article class="card">
+          <h2>XP Level → Total XP</h2>
+          <p>
